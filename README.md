@@ -1,3 +1,26 @@
+```
+nextjs-test
+├─ eslint.config.mjs
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+├─ src
+│  └─ app
+│     ├─ favicon.ico
+│     ├─ globals.css
+│     ├─ layout.tsx
+│     └─ page.tsx
+└─ tsconfig.json
+
+```
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
