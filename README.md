@@ -6,17 +6,28 @@ nextjs-test
 ├─ package.json
 ├─ postcss.config.mjs
 ├─ public
-│  ├─ file.svg
-│  ├─ globe.svg
-│  ├─ next.svg
-│  ├─ vercel.svg
-│  └─ window.svg
+│  └─ images
+│     └─ logos
+│        └─ gravis.png
 ├─ src
-│  └─ app
-│     ├─ favicon.ico
-│     ├─ globals.css
-│     ├─ layout.tsx
-│     └─ page.tsx
+│  ├─ app
+│  │  ├─ about
+│  │  │  └─ page.tsx
+│  │  ├─ contact
+│  │  │  └─ page.tsx
+│  │  ├─ layout.tsx
+│  │  ├─ not-found.tsx
+│  │  ├─ page.tsx
+│  │  └─ team
+│  │     └─ page.tsx
+│  ├─ components
+│  │  ├─ layout
+│  │  │  ├─ Footer.tsx
+│  │  │  └─ Navbar.tsx
+│  │  └─ ui
+│  │     └─ ThemeSwitch.tsx
+│  └─ styles
+│     └─ globals.css
 └─ tsconfig.json
 
 ```

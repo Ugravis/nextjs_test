@@ -31,13 +31,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
 
-      <body className={`flex flex-col justify-between min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div>
-          <Navbar />
-          <main>
-            {children}
-          </main>
-        </div>
+      <body className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
+        <main className="grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
