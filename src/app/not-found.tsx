@@ -6,7 +6,7 @@ export default function NotFound() {
     const pathname = usePathname()
 
     return (
-        <div>
+        <div className='grow flex flex-col justify-center items-center'>
             <h1 className='text-2xl'>Erreur 404</h1>
             <p>La page {pathname} n'existe pas</p>
             <button
