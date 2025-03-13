@@ -1,42 +1,25 @@
-"use client"; // Ce composant est interactif
+import axiosConfig from "@/config/axios.config";
 
-import { useEffect } from "react";
-import { useUserStore } from "@/lib/store/useUserStore";
-import { updateUserAction } from "./actions";
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
 
-export default function UsersPage() {
-  const { users, setUsers, updateUser } = useUserStore();
-
-  // Charger les utilisateurs depuis l'API uniquement au premier rendu
-  useEffect(() => {
-    async function fetchUsers() {
-      const res = await fetch("http://localhost:3000/users", { cache: "no-store" });
-      const data = await res.json();
-      setUsers(data);
-    }
-
-    if (users.length === 0) {
-      fetchUsers();
-    }
-  }, [setUsers, users.length]);
-
-  const handleUpdate = async (id: number) => {
-    const newName = prompt("Nouveau pseudo ?");
-    if (!newName) return;
-
-    await updateUserAction(id, newName); // Modifier dans la DB
-    updateUser(id, newName); // Mettre à jour immédiatement le store
-  };
+export default async function UsersPage() {
+  const res = await axiosConfig.get("/users");
+  const users: User[] = res.data;
 
   return (
     <div>
-      <h1>Liste des utilisateurs</h1>
-      {users.map((user) => (
-        <div key={user.id}>
-          {user.name} - {user.age} ans{" "}
-          <button onClick={() => handleUpdate(user.id)}>Modifier</button>
-        </div>
-      ))}
+      <h1 className="text-2xl">Liste des utilisateurs</h1>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            <p>Nom: {user.name}, email: {user.email}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

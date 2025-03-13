@@ -4,6 +4,6 @@
     },
 
     "DEV": {
-        "apiBaseURL": "http://localhost:3000"
+        "apiBaseURL": "https://jsonplaceholder.typicode.com"
     }
 }
