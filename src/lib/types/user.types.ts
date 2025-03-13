@@ -11,3 +11,9 @@ export interface User {
         name: string
     }
 }
+
+export interface UsersState {
+    users: User[]
+    getUsers: () => Promise<void>
+    updateUser: (id: number, newUserData: User) => void
+}

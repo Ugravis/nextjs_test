@@ -1,11 +1,13 @@
-import PROJECTCONFIG from './project.config.json'
-import axios from 'axios'
+import PROJECTCONFIG from "./project.config.json";
+import axios from "axios";
 
 export default axios.create({
-    baseURL: process.env.NODE_ENV==='development'?PROJECTCONFIG.DEV.apiBaseURL:PROJECTCONFIG.PROD.apiBaseURL,
-    // headers: { 'Content-Type': 'application/json' },
-    timeout: 10*1000,
-})
+  baseURL: process.env.NODE_ENV === "development" ? PROJECTCONFIG.DEV.apiBaseURL : PROJECTCONFIG.PROD.apiBaseURL,
+  timeout: 10 * 1000,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
 // apiClient.interceptors.response.use(
 //     (response) => {
